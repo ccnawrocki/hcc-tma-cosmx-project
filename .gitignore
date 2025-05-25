@@ -1,0 +1,60 @@
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+
+# R files #
+.Rhistory
+.Rproj.user
+.Rprofile
+*.Rproj
+
+# Jupyter files #
+*/.ipynb_checkpoints/
+
+# Packages #
+############
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# Data #
+########
+# No data will be uploaded here.
+*.xlsx
+*.csv
+*.RDS
+*.H5Seurat
+*.h5ad
+*.xls
+*.geojson
+*.json
+
+
+# Plots #
+#########
+# Only the final figures will be uploaded after submission as a powerpoint.
+*.pdf
+*.html
+*.png
+*.jpg
+*.jpeg
+*.png
+# *.pptx
+
+
+# Folders #
+###########
+*/*learning_and_archived/
+*/*hive/
+*/*ObjectData/
+renv
+
+# Deep Learning Models #
+*/*model/
+*/*model_v2/
