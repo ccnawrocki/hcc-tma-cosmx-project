@@ -34,8 +34,8 @@ tmas$core_global <- paste(stringr::str_sub(string = tmas$slide, start = 8, end =
 incosmx <- (tmas$core_global |> unique())
 
 # Add MRNs and de-identified patient IDs
-pathkey <- filter(pathkey, core_global %in% incosmx)
-pathkey$MRN <- plyr::mapvalues(x = pathkey$patient, from = clindb$patient, to = clindb$MRN)
+pathkey <- dplyr::filter(pathkey, core_global %in% incosmx)
+pathkey$MRN <- plyr::mapvalues(x = pathkey$patient, from = clindb$path_number, to = clindb$MRN)
 missed <- readRDS(file = "3-DE-analysis/missed_mrns.RDS") # Saved these here, so this script has no PII in it
 pathkey[pathkey$patient %in% names(missed),]$MRN <- missed[pathkey[pathkey$patient %in% names(missed),]$patient]
 pathkey$patient_deid <- plyr::mapvalues(x = pathkey$core_global, from = tmas$core_global, to = as.character(tmas$patient))

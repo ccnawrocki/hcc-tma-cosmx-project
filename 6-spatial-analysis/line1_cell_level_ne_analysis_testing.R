@@ -76,7 +76,7 @@ META$celltype %<>% as.factor()
 META <- split(META, as.character(META$fov))
 
 # Using cell coordinates (in mm) to find Delaunay neighbors (these are first tier neighbors)
-coords <- lapply(X = META, FUN = select, sdimx , sdimy)
+coords <- lapply(X = META, FUN = dplyr::select, sdimx , sdimy)
 adj <- purrr::map(coords, spatula::getSpatialNeighbors, return_weights = T)
 cellids <- lapply(coords, rownames) |> unlist()
 adj <- Matrix::bdiag(adj) # Easier to work with as one big matrix
